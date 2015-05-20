@@ -67,6 +67,19 @@ function startsWith(string) {
 }
 
 
+function stringRepeat(string, n) {
+    var result = '', i;
+
+    for(i=1; i<=n; i=i*2) {
+        if ((n & i) === i) {
+            result += string;
+        }
+        string = string + string;
+    }
+
+    return result;
+}
+
 
 
 function nSum(input) {
@@ -76,6 +89,8 @@ function nSum(input) {
     }
     return sum;
 }
+
+
 
 
 
