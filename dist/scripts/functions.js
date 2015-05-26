@@ -91,16 +91,21 @@ function nSum(input) {
 }
 
 
+function join(outputArray) {
+	return outputArray.join(', ');
+
+}
 
 
-
-
-
-
-
-
-
-
+function countLetters(inputString) {
+	var numAs = 0; 
+	for(var i=0; i<inputString.length; i++) {
+		if(inputString.charAt(i) === 'a') {
+			numAs = numAs +1;
+		}
+	}
+	return numAs;
+}
 
 
 
