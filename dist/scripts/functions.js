@@ -91,21 +91,42 @@ function nSum(input) {
 }
 
 
-function join(outputArray) {
-	return outputArray.join(', ');
+function join (array, spacer) {
+	var newArray = [];
 
+	for(var i = 0 ; i < array.length; i++) {
+		newArray.push(array[i]);
+		newArray.push(spacer);
+	}
+
+	var newString = newArray.join('');
+
+	return newString;
 }
 
 
 function countLetters(inputString) {
-	var numAs = 0; 
-	for(var i=0; i<inputString.length; i++) {
-		if(inputString.charAt(i) === 'a') {
-			numAs = numAs +1;
+	var letterCount = {};
+	
+	for(var i=0; i <inputString.length; i++) {
+
+		var currentLetter = inputString.charAt(i);
+
+		if(!letterCount.hasOwnProperty(currentLetter)) {
+			letterCount[currentLetter] = 1;
 		}
-	}
-	return numAs;
+		else{
+			letterCount[currentLetter]++;
+		}	
+		var outputArray=[];
+		for(var propertyName in letterCount) {
+			var count=letterCount[propertyName];		
+			outputArray.push(' '+propertyName + ': '+ count );
+		}
+	};
+	return outputArray;
 }
+
 
 
 
